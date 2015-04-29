@@ -43,11 +43,10 @@ class RecipeTest <  ActiveSupport::TestCase
 		assert_not @recipe.valid?
 	end
 
-	#este da error pero no se porque :(
-	#test "summary length should not be too short" do
-		#@recipe.summary = "a" * 9
-		#assert_not @recipe.valid?
-	#end
+	test "summary length should not be too short" do
+		@recipe.summary = "a" * 9
+		assert_not @recipe.valid?
+	end
 
 	test "description must be present" do
 		@recipe.description = " "
