@@ -13,5 +13,10 @@ Rails.application.routes.draw do
   #delete '/recipes/:id', to: 'recipes#destroy'
 
   #con resources se hacen las mismas rutas que arriba automaticamente
-  resources :recipes
+  resources :recipes do
+    member do 
+      post 'like'
+    end
+  end
+  
 end
