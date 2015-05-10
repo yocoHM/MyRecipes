@@ -7,11 +7,11 @@ class RecipesController < ApplicationController
 	before_action :admin_user, only: :destroy
 
 	def index
-		@recipes = Recipe.all.sort_by{|likes| likes.thumbs_up_total}.reverse
+		@recipes = Recipe.paginate(page: params[:page], per_page: 4)
 	end
 
 	def show
-		#se hace el befor_action de set_recipe
+		#se hace el before_action de set_recipe
 	end
 
 	def new
@@ -32,7 +32,7 @@ class RecipesController < ApplicationController
 	end
 
 	def edit
-		#se hace el befor_action de set_recipe
+		#se hace el before_action de set_recipe
 	end
 
 	def update

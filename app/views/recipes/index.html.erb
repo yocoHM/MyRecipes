@@ -1,5 +1,7 @@
 <%= render 'shared/page_title', title: "All Recipes" %> 
 
+<%= will_paginate @recipes%>
+
 <% @recipes.each do |recipe| %>
 	
 	<div class="row">
@@ -18,9 +20,15 @@
 			<p>
 				<span class="quiet">
 					<small>
-						<%= time_ago_in_words(recipe.created_at) %> ago
+						created: <%= time_ago_in_words(recipe.created_at) %> ago, 
 					</small>
 				</span> 
+
+				<span class="quiet">
+					<small>
+						updated: <%= time_ago_in_words(recipe.updated_at) %> ago
+					</small>
+				</span>
 			</p>
 
 			<div class="pull-right">
@@ -37,3 +45,5 @@
 	<hr/>
 
 <% end %>
+
+<%= will_paginate @recipes%>
