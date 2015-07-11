@@ -17,7 +17,7 @@ class ChefsController < ApplicationController
 	def create
 		@chef = Chef.new(chef_params)
 		if @chef.save
-			flash[:success] = "Your account has been created succesfully!"
+			flash[:success] = "¡Tu cuenta fue creada satisfactoriamente!"
 			session[:chef_id] = @chef.id
 			redirect_to recipes_path
 		else
@@ -30,7 +30,7 @@ class ChefsController < ApplicationController
 
 	def update
 		if @chef.update(chef_params)
-			flash[:success] = "Your profile has been updated successfully!"
+			flash[:success] = "¡Tu cuenta fue actualizada satisfactoriamente!"
 			redirect_to chef_path(@chef)
 		else
 			render 'edit'
@@ -53,7 +53,7 @@ class ChefsController < ApplicationController
 
 		def require_same_user
 			if current_user != @chef
-				flash[:danger] = "You can only edit your own profile"
+				flash[:danger] = "Solo puedes editar tu propio perfil"
 				redirect_to root_path
 			end
 		end

@@ -12,13 +12,13 @@
 			<%= f.label :description %>
 			<%= f.text_area :description, rows: 10 %>
 
-			<strong>Styles:</strong>
+			<strong>Tipos:</strong>
 			<%= f.collection_check_boxes :style_ids, Style.all, :id, :name do |cb| %>
 			<% cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "checkbox") + cb.text} %>
 			<% end %>
 			<br></br>
 
-			<strong>Ingredients:</strong>
+			<strong>Ingredientes:</strong>
 			<%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name do |cbi| %>
 			<% cbi.label(class: "checkbox-inline input_checkbox") {cbi.check_box(class: "checkbox") + cbi.text} %>
 			<% end %>
@@ -26,7 +26,7 @@
 
 			<!--Si es una nueva recipe el botón va a decir Create Recipe, de otra manera
 			va a decir Edit Recipe-->
-			<%= f.submit(@recipe.new_record? ? 'Create Recipe' : 'Edit Recipe', class: "btn btn-success") %> 
+			<%= f.submit(@recipe.new_record? ? 'Crear Receta' : 'Editar Receta', class: "btn btn-success") %> 
 
 		 <%end%>
 	</div>

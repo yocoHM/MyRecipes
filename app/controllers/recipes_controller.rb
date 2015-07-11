@@ -24,7 +24,7 @@ class RecipesController < ApplicationController
 		@recipe.chef = current_user
 
 		if @recipe.save
-			flash[:success] = "Your recipe was created successfully!"
+			flash[:success] = "¡Tu receta fue creada satisfactoriamente!"
 			redirect_to recipes_path 	
 		else 
 			render :new
@@ -39,7 +39,7 @@ class RecipesController < ApplicationController
 	def update
 		#se hace el befor_action de set_recipe
 		if @recipe.update(recipe_params)
-			flash[:success] = "Your recipe was updated successfully!"
+			flash[:success] = "¡Tu receta fue actualizada satisfactoriamente!"
 			redirect_to recipe_path(@recipe)
 		else
 			render :edit
@@ -50,17 +50,17 @@ class RecipesController < ApplicationController
 		#se hace el befor_action de set_recipe
 		like = Like.create(like: params[:like], chef: current_user, recipe: @recipe)
 		if like.valid?
-			flash[:success] = "Your selection was successful"
+			flash[:success] = "Te ha gustado esa receta"
 			redirect_to :back
 		else
-			flash[:danger] = "You can only like/dislike a recipe once"
+			flash[:danger] = "Solo puedes darle me gusta/no me gusta a una receta una sola vez"
 			redirect_to :back
 		end
 	end
 
 	def destroy
 		Recipe.find(params[:id]).destroy
-		flash[:success] = "Recipe deleted"
+		flash[:success] = "Receta eliminada"
 		redirect_to recipes_path
 	end
 
@@ -77,14 +77,14 @@ class RecipesController < ApplicationController
 
 			def require_same_user
 				if current_user != @recipe.chef and !current_user.admin?
-					flash[:danger] = "You can only edit your own recipes"
+					flash[:danger] = "Solo puedes editar tus propias recetas"
 					redirect_to recipes_path
 				end
 			end
 
 			def require_user_like
     			if !logged_in?
-      				flash[:danger] = "You must be logged in to perform that action"
+      				flash[:danger] = "Debes de ingresar con tu cuenta para hacer esa acción"
      			 	redirect_to :back
     			end
   		end

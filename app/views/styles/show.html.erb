@@ -1,8 +1,8 @@
-<%= render 'shared/page_title', title: "Recipes for: " + @style.name + " food" %> 
+<%= render 'shared/page_title', title: "Recetas para: " + @style.name + " food" %> 
 
 <ul class="nav nav-tabs">
 	<li class="active">
-		<%= link_to "Recipes", recipes_path %>
+		<%= link_to "Recetas", recipes_path %>
 	</li>
 	<li>
 		<%= link_to "Chefs", chefs_path %>
@@ -19,7 +19,7 @@
 		<div class="col-md-2">
 			<section class="chef_info center">
 				<%= link_to gravatar_for(recipe.chef, size: 100), chef_path(recipe.chef)  %>
-				<h5>Chef name: <%=recipe.chef.chefname %></h5>
+				<h5>Chef: <%=recipe.chef.chefname %></h5>
 			</section>
 		</div>
 
@@ -33,13 +33,13 @@
 			<p>
 				<span class="quiet">
 					<small>
-						created: <%= time_ago_in_words(recipe.created_at) %> ago, 
+						creada: <%= time_ago_in_words(recipe.created_at) %> ago,
 					</small>
 				</span> 
 
 				<span class="quiet">
 					<small>
-						updated: <%= time_ago_in_words(recipe.updated_at) %> ago
+						actualizada: <%= time_ago_in_words(recipe.updated_at) %> ago
 					</small>
 				</span>
 			</p>

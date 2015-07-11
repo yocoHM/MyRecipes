@@ -1,35 +1,35 @@
 <div class="center jumbotron">
-	<h1>Bienvenido a MyRecipes App</h1>
+	<h1>Bienvenido a las recetas de la familia Hernández Mondragón</h1>
 
 	<h2>
-		Esta es una página hecha por Yocoyani Hernández en un curso de Udemy
+		Esta página esta hecha para ir guardando nuestras recetas familiares.
 	</h2>
 
-	<%= link_to "¡Inscríbete ahora!", register_path, class: "btn btn-lg btn-success" %>
+	<%= link_to "¡Crea tu cuenta aquí!", register_path, class: "btn btn-lg btn-success" %>
 </div>
 
 <div class="row">
 	<div class="col-lg-4">
 		<h3 class="midraw">
-			View Recipes as Guest User
+			Ver las recetas como invitado solamente
 		</h3>
-		<h2 class="left">Browse and view recipes as a guest and Sign up later</h2>
-		<p><%= link_to "Browse Recipe listings", recipes_path, class: "btn btn-warning btn-small"%></p>
+		<h2 class="left">Navega por las recetas sin necesidad de tener una cuenta creada</h2>
+		<p><%= link_to "Ver recetas", recipes_path, class: "btn btn-warning btn-small"%></p>
 	</div>
 
 	<div class="col-lg-4">
 		<h3 class="midraw">
-			Sign in to your account
+			¡Ingresa a tu cuenta Chef!
 		</h3>
-		<h2 class="left">Add/update your recipes/create reviews/like-dislike recipes and much much more!</h2>
-		<p><%= link_to "Login to your account", login_path, class: "btn btn-warning btn-small"%></p>
+		<h2 class="left">Si ya tienes una cuenta puedes crear/editar tus recetas, ver las de otros Chefs y más.</h2>
+		<p><%= link_to "Acceder a tu cuenta", login_path, class: "btn btn-warning btn-small"%></p>
 	</div>
 
 	<div class="col-lg-4">
 		<h3 class="midraw">
-			View Recipes as Guest User
+			Este es un espacio extra, aún sin servicio
 		</h3>
-		<h2 class="left">Browse and view recipes as a guest and Sign up later</h2>
-		<p><%= link_to "Browse Recipe listings", "", class: "btn btn-warning btn-small"%></p>
+		<h2 class="left">Si tienes una idea para usar este espacio dime</h2>
+		<p><%= link_to "Botón sin lugar a donde ir :(", "", class: "btn btn-warning btn-small"%></p>
 	</div>
 </div>

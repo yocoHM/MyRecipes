@@ -11,17 +11,17 @@ class LoginsController < ApplicationController
 
 		if chef && chef.authenticate(params[:password])
 			session[:chef_id] = chef.id
-			flash[:success] = "You are logged in"
+			flash[:success] = "Entraste a tu cuenta"
 			redirect_to recipes_path
 		else
-			flash.now[:danger] = "Your email address or password does not match"
+			flash.now[:danger] = "Tu email o tu contraseña son incorrectos"
 			render 'new'
 		end
 	end
 
 	def destroy
 		session[:chef_id] = nil
-		flash[:success] = "You have logged out"
+		flash[:success] = "Saliste de tu cuenta"
 		redirect_to root_path
 	end
 
